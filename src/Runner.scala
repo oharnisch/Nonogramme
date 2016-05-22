@@ -11,7 +11,7 @@ object Runner{
     val f = new Nonogram(r)
     println(f)
 
-    val v = Field.unknown()
+
   }
 
 
