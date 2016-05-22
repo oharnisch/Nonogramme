@@ -11,6 +11,11 @@ object Runner{
     val f = new Nonogram(r)
     println(f)
 
+    val b = new Board(2,2)
+    b.setField(1,1,Field.empty)
+    b.setField(0,1,Field.filled)
+    println(b)
+
 
   }
 
