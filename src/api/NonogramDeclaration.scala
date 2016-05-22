@@ -3,7 +3,7 @@ package api
 /**
 * Created by Ole on 21.05.2016.
 */
-case class NonogramDeclaration(numberRows:Int, numberColumns:Int, rows: Seq[rowDeclaration], columns : Seq[columnDeclaration]){
+case class NonogramDeclaration(numberRows:Int, numberColumns:Int, rows: List[rowDeclaration], columns : List[columnDeclaration]){
   //restrictions
   if (numberRows!=rows.length){
     //abort

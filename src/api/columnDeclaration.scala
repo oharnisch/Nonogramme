@@ -3,7 +3,7 @@ package api
 /**
 * Created by Ole on 21.05.2016.
 */
-case class columnDeclaration(numberOfBlocks : Seq[Integer]){
+case class columnDeclaration(numberOfBlocks : List[Int]){
 
     var output = ""
     numberOfBlocks.foreach(output += ", "+_ )
