@@ -14,16 +14,19 @@ object NonogramImplicits {
   implicit class Ratio (r:Rows){
     def x (c:Columns) = new Rate(r,c)
   }
-  implicit class Nono(ra:Rate){
-    def Nonogramm(z:Zeilen,s:Spalten)=new NonoDec(ra,z,s)
+  implicit class Nono(ra:Rate) {
+    def Nonogramm(z: Zeilen, s: Spalten): Nonogram = {
+      val rds: List[rowDeclaration] = z.seq.map(x => new rowDeclaration(x))
+      val cds: List[columnDeclaration] = s.seq.map(x => new columnDeclaration(x))
+      new Nonogram(new NonogramDeclaration(ra.c, ra.r, rds, cds))
+    }
   }
 
-  implicit class NonoCreator(nd:NonoDec){
-    def d ():Nonogram ={
-      val rds : List[rowDeclaration] =nd.z.seq.map(x=> new rowDeclaration(x))
-      val cds : List[columnDeclaration]= nd.s.seq.map(x => new columnDeclaration(x))
-      new Nonogram(new NonogramDeclaration(nd.ra.c,nd.ra.r,rds,cds))
-    }
+  implicit def ints2List (x: Int*) : List[Int] = {
+    x.toList
+  }
+  implicit def lists2Listlist (x: List[Int]*) : List[List[Int]] = {
+    x.toList
   }
 
   case class Zeilen(seq: List[List[Int]])
