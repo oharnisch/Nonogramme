@@ -3,12 +3,8 @@ package api
 /**
   * Created by Ole on 21.05.2016.
   */
-case class Nonogram(nonogrammDeclaration: NonogramDeclaration){
-  var  matrix = new Array[Array[Boolean]](nonogrammDeclaration.numberRows)
-  for (i <- 0 until nonogrammDeclaration.numberRows){
-    //creates Matrix with only false in it
-    matrix(i)=new Array[Boolean](nonogrammDeclaration.numberColumns)
-  }
+case class Nonogram(nonoDec: NonogramDeclaration){
+  var  board = new Board(nonoDec.numberRows,nonoDec.numberColumns)
 
 
   // dummy method for checking a nonogram
@@ -18,15 +14,16 @@ case class Nonogram(nonogrammDeclaration: NonogramDeclaration){
   override def toString: String = {
 
     var output:String = ""
-    for (e <- 0 to nonogrammDeclaration.rows.head.toString().length+3){
+    // left margin for line 0
+    for (e <- 0 to nonoDec.rows.head.toString().length+3){
       output += " "
     }
-    output += nonogrammDeclaration.outputColumn + "\n"
-    for (i <- 0 until nonogrammDeclaration.numberRows){
-      output+= nonogrammDeclaration.rows(i) + " | "
-      for (j <- 0 until nonogrammDeclaration.numberColumns){
-        output += matrix(i)(j)
-        for (k <- 0 to (nonogrammDeclaration.columns(j).toString().length()-matrix(i)(j).toString.length)){
+    output += nonoDec.outputColumn + "\n"
+    for (i <- 0 until nonoDec.numberRows){
+      output+= nonoDec.rows(i) + " | "
+      for (j <- 0 until nonoDec.numberColumns){
+        output += board.fieldToString(i,j)
+        for (k <- 0 to (nonoDec.columns(j).toString().length()-board.fieldToString(i,j).length)){
           output += " "
         }
       }
