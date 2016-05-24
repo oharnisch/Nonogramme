@@ -8,8 +8,8 @@ object NonogramImplicits {
   type Rows = Int
   type Columns = Int
   type RowDec = Array[Int]
-  private case class Rate  (r:Rows,c:Columns)
-  private case class NonoDec  (ra:Rate, z:row, s:column)
+  case class Rate  (r:Rows,c:Columns)
+  case class NonoDec  (ra:Rate, z:row, s:column)
   //ratio
   implicit class Ratio (r:Rows){
     def x (c:Columns) = new Rate(r,c)
@@ -31,8 +31,8 @@ object NonogramImplicits {
   def Zeilen (seq: List[List[Int]]) = new row(seq)
   def Spalten (seq: List[List[Int]]) = new column(seq)
 
-  private case class row(seq: List[List[Int]])
-  private case class column(seq: List[List[Int]])
+  case class row(seq: List[List[Int]])
+  case class column(seq: List[List[Int]])
 
 //  implicit def rows2Ratio(r : rows)=
   //  new Ratio(r)
