@@ -7,15 +7,15 @@ case class NonogramDeclaration(numberRows:Int, numberColumns:Int, rows: List[row
   //restrictions
   if (numberRows!=rows.length){
     //abort
-    println("not matching row length")
+    throw new Error("Number of row length does not match number of rows")
   }
   if (numberColumns!=columns.length){
     //abort
-    println("not matching columns length")
+    throw new Error("Number of columns does not match number of columns")
   }
   if (numberColumns==0 || numberRows == 0){
     //abort
-    println ("0 length not allowed")
+    throw new Error("0 length not allowed")
   }
 
   //output Helper vars

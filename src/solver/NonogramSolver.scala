@@ -10,9 +10,19 @@ object NonogramSolver {
       println("Proof I can work with the Nonogramobject:")
       println("Before:")
       println(nono)
-      println("After: (setting field 0 0 to filled and 0 1 to empty")
+      println("After: (scripted)")
     nono.board.setField(0,0,Field.filled)
     nono.board.setField(0,1,Field.empty)
+    nono.board.setField(0,2,Field.filled)
+    nono.board.setField(1,0,Field.filled)
+    nono.board.setField(1,1,Field.empty)
+    nono.board.setField(1,2,Field.empty)
+    nono.board.setField(2,0,Field.filled)
+    nono.board.setField(2,1,Field.empty)
+    nono.board.setField(2,2,Field.filled)
+
+
+
     println(nono)
   }
 

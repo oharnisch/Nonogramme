@@ -15,12 +15,17 @@ case class Nonogram(nonoDec: NonogramDeclaration){
 
     var output:String = ""
     // left margin for line 0
-    for (e <- 0 to nonoDec.rows.head.toString().length+3){
+    val margin = 9
+    for (e <- 0 to (margin+1)){
       output += " "
     }
     output += nonoDec.outputColumn + "\n"
     for (i <- 0 until nonoDec.numberRows){
-      output+= nonoDec.rows(i) + " | "
+      output+= nonoDec.rows(i)
+      for (m<-0 until (margin-nonoDec.rows(i).toString.length)){
+        output +=" "
+      }
+      output +=" | "
       for (j <- 0 until nonoDec.numberColumns){
         output += board.fieldToString(i,j)
         for (k <- 0 to (nonoDec.columns(j).toString().length()-board.fieldToString(i,j).length)){
