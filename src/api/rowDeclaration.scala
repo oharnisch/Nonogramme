@@ -6,9 +6,12 @@ package api
 case class rowDeclaration(numberOfBlocks : List[Int]) {
 
       var output = ""
-      numberOfBlocks.foreach(output += ", "+_ )
-      output = output.replaceFirst(", ","(")
-      output += ")"
-
+  if(numberOfBlocks.isEmpty){
+    output = "( )"
+  }else {
+    numberOfBlocks.foreach(output += ", " + _)
+    output = output.replaceFirst(", ", "(")
+    output += ")"
+  }
     override def toString = s"$output"
 }

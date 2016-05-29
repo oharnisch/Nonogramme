@@ -8,7 +8,7 @@ import solver.NonogramSolver
 object externalDslExecution {
   def main(args: Array[String]) {
 
-    val t = "2 x 2 Nonogramm nono1 ( Zeilen ( ( 2 ) ( 2 1 ) ) Spalten ( ( 3 ) ( ) ) )"
+    val t = "2 x 2 Nonogramm nono1 Zeilen ( 22 ) ( 2 1 )  Spalten ( 3 ) ( )"
 
 
     NonogramParser.parseAll(NonogramParser.model,t) match {
