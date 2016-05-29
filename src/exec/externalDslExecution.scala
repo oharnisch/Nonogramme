@@ -16,11 +16,12 @@ object externalDslExecution {
       case x => println(x)
     }
 
-
+  /**
     NonogramParser.parseAll(NonogramParser.model,t) match {
       case NonogramParser.Success(res,_) => NonogramSolver.solve(res)
       case x => println(x)
     }
+    **/
 
 
   }
