@@ -15,7 +15,7 @@ object NonogramParser extends JavaTokenParsers {
     case row ~ column   => Ratio(row.toInt,column.toInt)
   }
 
-  def nonoDec = "Nonogramm" ~ ident.?  ~ "Zeilen" ~> rowSpecifier.* ~ ("Spalten" ~> columnSpecifier.*) ^^{
+  def nonoDec = "Nonogramm" ~ "Zeilen" ~> rowSpecifier.* ~ ("Spalten" ~> columnSpecifier.*) ^^{
     case roSpec ~ colSpec => NonoDec(roSpec,colSpec)
   }
   def rowSpecifier = "("~> wholeNumber.* <~ ")" ^^ {

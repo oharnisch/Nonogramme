@@ -7,16 +7,13 @@ import api._
 */
 object apiExecution{
   def main(args: Array[String]) {
-    val r = {
+    val nd = {
       NonogramDeclaration(2,2,List(rowDeclaration(List(3, 4)),rowDeclaration(List(1,7))), List(columnDeclaration(List(3, 4)),columnDeclaration(List(2, 9))))
     }
-    val f = new Nonogram(r)
-    println(f)
+    val nono = new Nonogram(nd)
+    println(nono)
 
-    val b = new Board(2,2)
-    b.setField(1,1,Field.empty)
-    b.setField(0,1,Field.filled)
-    println(b)
+
 
 
   }
