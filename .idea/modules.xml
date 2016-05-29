@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Nonograms.iml" filepath="$PROJECT_DIR$/Nonograms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nonograms.iml" filepath="$PROJECT_DIR$/.idea/modules/nonograms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nonograms-build.iml" filepath="$PROJECT_DIR$/.idea/modules/nonograms-build.iml" />
     </modules>
   </component>
 </project>
