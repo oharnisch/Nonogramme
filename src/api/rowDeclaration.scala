@@ -3,7 +3,7 @@ package api
 /**
   * Created by Ole on 21.05.2016.
   */
-case class rowDeclaration(numberOfBlocks : List[Int]) {
+case class RowDeclaration(numberOfBlocks : List[Int]) {
 
       var output = ""
   if(numberOfBlocks.isEmpty){

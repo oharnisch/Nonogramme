@@ -3,7 +3,7 @@ package api
 /**
 * Created by Ole on 21.05.2016.
 */
-case class columnDeclaration(numberOfBlocks : List[Int]){
+case class ColumnDeclaration(numberOfBlocks : List[Int]){
 
     var output = ""
   if(numberOfBlocks.isEmpty){

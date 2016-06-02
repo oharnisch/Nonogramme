@@ -1,5 +1,5 @@
 package exec
-import dsl.NonogramImplicits._
+import solver.NonogramSolver
 
 /**
   * Created by Ole on 22.05.2016.
@@ -9,9 +9,11 @@ object internalDslExecution {
 
     import dsl.NonogramImplicits._
 
-    val nonogramm = 3 x 3 Nonogramm (Zeilen(List(List(3),List(1),List(1))),Spalten(List(List(2),List(1,1),List(1))))
+    var nonogram = 3 x 3 Nonogramm (Zeilen(List(List(3),List(1),List(1))),Spalten(List(List(2),List(1,1),List(1))))
     //val lis:List[Int] = (2, 34, 5)
-    print(nonogramm)
+
+    nonogram = NonogramSolver.solve(nonogram)
+    print(nonogram)
   }
 
 }

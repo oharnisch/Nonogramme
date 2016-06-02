@@ -5,7 +5,7 @@ import api._
   * Created by Ole on 27.05.2016.
   */
 object NonogramSolver {
-  def solve(nono: Nonogram): Unit ={
+  def solve(nono: Nonogram): Nonogram ={
       println("I am a dummy solver but I do only take Nonogram Objects")
       println("Proof I can work with the Nonogramobject:")
       println("Before:")
@@ -24,6 +24,7 @@ object NonogramSolver {
 
 
     println(nono)
+    nono
   }
 
 }

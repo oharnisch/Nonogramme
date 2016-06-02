@@ -16,8 +16,8 @@ object NonogramImplicits {
   }
   implicit class Nono(ra:Rate) {
     def Nonogramm(z: row, s: column): Nonogram = {
-      val rds: List[rowDeclaration] = z.seq.map(x => new rowDeclaration(x))
-      val cds: List[columnDeclaration] = s.seq.map(x => new columnDeclaration(x))
+      val rds: List[RowDeclaration] = z.seq.map(x => new RowDeclaration(x))
+      val cds: List[ColumnDeclaration] = s.seq.map(x => new ColumnDeclaration(x))
       new Nonogram(new NonogramDeclaration(ra.c, ra.r, rds, cds))
     }
   }

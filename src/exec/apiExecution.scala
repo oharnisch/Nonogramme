@@ -8,7 +8,7 @@ import api._
 object apiExecution{
   def main(args: Array[String]) {
     val nd = {
-      NonogramDeclaration(2,2,List(rowDeclaration(List(1)),rowDeclaration(List(2))), List(columnDeclaration(List(2)),columnDeclaration(List(1))))
+      NonogramDeclaration(2,2,List(RowDeclaration(List(1)),RowDeclaration(List(2))), List(ColumnDeclaration(List(2)),ColumnDeclaration(List(1))))
     }
     val nono = new Nonogram(nd)
     println(nono)
